@@ -5,13 +5,15 @@ import javax.persistence.*;
 @Entity
 @Table(name = "cars")
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private Long id;
     @Column(name = "model")
-    String model;
+    private String model;
     @Column(name = "series")
-    int series;
+    private int series;
+
 
     public Car() {
     }
@@ -22,11 +24,11 @@ public class Car {
         this.series = series;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,5 +46,14 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", series=" + series +
+                '}';
     }
 }
