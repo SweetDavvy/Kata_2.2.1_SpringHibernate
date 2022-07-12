@@ -19,7 +19,6 @@ public class Car {
     }
 
     public Car(String model, int series) {
-        this.id = id;
         this.model = model;
         this.series = series;
     }
