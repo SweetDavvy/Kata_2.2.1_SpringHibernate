@@ -28,7 +28,7 @@ public class MainApp {
 
         System.out.println(userService.getUserByCar("BMW", 3));
 
-        List<User> users = userService.listUsers();
+        List<User> users = userService.showAllUsers();
         for (User user : users) {
             System.out.println("Id = " + user.getId());
             System.out.println("First Name = " + user.getFirstName());

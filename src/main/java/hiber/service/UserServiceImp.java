@@ -8,7 +8,6 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class UserServiceImp implements UserService {
 
     private final UserDao userDao;
@@ -18,13 +17,16 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    @Transactional
     public void addUser(User user) {
         userDao.addUser(user);
     }
+
     @Override
-    public List<User> listUsers() {
-        return userDao.listUsers();
+    public List<User> showAllUsers() {
+        return userDao.showAllUsers();
     }
+
     @Override
     public User getUserByCar(String model, int series) {
         return userDao.getUserByCar(model, series);
